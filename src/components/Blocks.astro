@@ -1,0 +1,46 @@
+---
+// Renders one page's block list (Tekst / Foto / Foto's / Tekening).
+import type { CollectionEntry } from 'astro:content';
+import { renderMarkdown } from '../lib/markdown';
+import { tilt } from '../lib/tilt';
+import Photo from './Photo.astro';
+
+type Block = CollectionEntry<'projects'>['data']['left'][number];
+interface Props {
+  blocks: Block[];
+  // Seed for deterministic photo tilt (e.g. "<project-id>-left")
+  seed: string;
+}
+const { blocks, seed } = Astro.props;
+---
+
+{blocks.map((block, i) => {
+  const s = `${seed}-${i}`;
+  switch (block.type) {
+    case 'text':
+      return <div class="block block--text ink" set:html={renderMarkdown(block.text)} />;
+    case 'photo':
+      return (
+        <figure class="block block--photo" style={`--tilt: ${tilt(s)}`}>
+          <Photo image={block.image} />
+          {block.caption && <figcaption class="ink">{block.caption}</figcaption>}
+        </figure>
+      );
+    case 'photos':
+      return (
+        <div class="block block--photos" data-count={block.images.length}>
+          {block.images.map((image, j) => (
+            <figure class="block--photo" style={`--tilt: ${tilt(`${s}-${j}`)}`}>
+              <Photo image={image} sizes="(min-width: 64rem) 20vw, 45vw" />
+            </figure>
+          ))}
+        </div>
+      );
+    case 'drawing':
+      return (
+        <figure class="block block--drawing">
+          <Photo image={block.image} link={false} />
+        </figure>
+      );
+  }
+})}

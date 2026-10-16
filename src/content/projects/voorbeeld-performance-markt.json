@@ -1,0 +1,66 @@
+{
+  "title": "Performance op de markt (voorbeeld)",
+  "year": 2021,
+  "medium": "Performance, 45 minuten",
+  "left": [
+    {
+      "type": "photos",
+      "images": [
+        {
+          "src": "/media/voorbeeld-performance-markt/34ef6189",
+          "width": 1920,
+          "height": 2400,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldfoto 1 van de performance"
+        },
+        {
+          "src": "/media/voorbeeld-performance-markt/9eb5f8ba",
+          "width": 2400,
+          "height": 2400,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldfoto 2 van de performance"
+        },
+        {
+          "src": "/media/voorbeeld-performance-markt/02c284a3",
+          "width": 2400,
+          "height": 1600,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldfoto 3 van de performance"
+        }
+      ]
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    },
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-performance-markt/98ed6cbd",
+        "width": 1714,
+        "height": 2400,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto van het publiek"
+      },
+      "caption": "Het publiek (voorbeeldbijschrift)"
+    }
+  ]
+}

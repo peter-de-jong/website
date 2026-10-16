@@ -1,0 +1,26 @@
+{
+  "name": "peterdejong-website",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "astro preview",
+    "import-image": "node scripts/import-image.mjs"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "5.3.0",
+    "@fontsource/cormorant-garamond": "5.3.0",
+    "@fontsource/eb-garamond": "5.3.0",
+    "@fontsource/fraunces": "5.3.0",
+    "@fontsource/libre-caslon-text": "5.3.0",
+    "astro": "7.4.0",
+    "marked": "18.1.1"
+  },
+  "devDependencies": {
+    "sharp": "0.35.5"
+  }
+}

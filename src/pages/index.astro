@@ -1,0 +1,61 @@
+---
+import { getEntry } from 'astro:content';
+import Blocks from '../components/Blocks.astro';
+import Spread from '../components/Spread.astro';
+import Base from '../layouts/Base.astro';
+import { getProjects, groupByYear } from '../lib/projects';
+
+const projects = await getProjects();
+const years = groupByYear(projects);
+const about = await getEntry('about', 'wie');
+if (!about) throw new Error('src/content/about/wie.json is missing');
+
+const meta = (p: (typeof projects)[number]) =>
+  [p.data.year, p.data.medium, p.data.dimensions].filter(Boolean).join(' · ');
+---
+
+<Base>
+  <header class="table-strip">
+    <!-- Placeholder until the scanned SVG of Peter's handwritten name -->
+    <a class="logo hand" href="#inhoud">Peter Dejong</a>
+    <a class="who hand" href="#wie">wie?</a>
+  </header>
+
+  <main class="book">
+    <Spread id="wie" label="Wie is Peter Dejong?">
+      <Fragment slot="left"><Blocks blocks={about.data.left} seed="wie-left" /></Fragment>
+      <Fragment slot="right"><Blocks blocks={about.data.right} seed="wie-right" /></Fragment>
+    </Spread>
+
+    <Spread id="inhoud" label="Inhoud">
+      <Fragment slot="left">
+        <h1 class="hand index-title">Inhoud</h1>
+      </Fragment>
+      <Fragment slot="right">
+        <nav aria-label="Alle projecten" class="index ink">
+          {years.map(([year, list]) => (
+            <section class="index__year">
+              <h2 class="hand">{year}</h2>
+              <ul>
+                {list.map((p) => (
+                  <li><a href={`#${p.id}`}>{p.data.title}</a></li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </nav>
+      </Fragment>
+    </Spread>
+
+    {projects.map((p) => (
+      <Spread id={p.id} label={p.data.title}>
+        <div slot="title" class="title-strip">
+          <h2 class="hand">{p.data.title}</h2>
+          <p class="title-strip__meta">{meta(p)}</p>
+        </div>
+        <Fragment slot="left"><Blocks blocks={p.data.left} seed={`${p.id}-left`} /></Fragment>
+        <Fragment slot="right"><Blocks blocks={p.data.right} seed={`${p.id}-right`} /></Fragment>
+      </Spread>
+    ))}
+  </main>
+</Base>

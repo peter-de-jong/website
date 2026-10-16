@@ -1,0 +1,16 @@
+# deploybase custom headers (Netlify syntax). Later rules override earlier ones,
+# so the broad rule comes first.
+
+# HTML and other non-fingerprinted files: always revalidate, so updates show immediately.
+/*
+  Cache-Control: no-cache
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Fingerprinted by Astro (CSS, JS, fonts, design images): safe to cache forever.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Project photos: content-hashed filenames written by /beheer or scripts/import-image.mjs.
+/media/*
+  Cache-Control: public, max-age=31536000, immutable

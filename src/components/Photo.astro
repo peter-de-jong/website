@@ -1,0 +1,33 @@
+---
+// A photo from /media in its pre-made WebP variants. Links to the largest version,
+// so it works without JS; the lightbox will enhance that link later.
+interface ImageRef {
+  src: string;
+  width: number;
+  height: number;
+  widths: number[];
+  alt: string;
+}
+interface Props {
+  image: ImageRef;
+  sizes?: string;
+  link?: boolean;
+}
+const { image, sizes = '(min-width: 64rem) 40vw, 90vw', link = true } = Astro.props;
+// Variants are named by their long edge; srcset needs each file's actual pixel width.
+const url = (w: number) => `${image.src}-${w}.webp`;
+const longEdge = Math.max(image.width, image.height);
+const pixelWidth = (w: number) => Math.round((image.width * w) / longEdge);
+const largest = Math.max(...image.widths);
+const fallback = image.widths.includes(1600) ? 1600 : largest;
+const srcset = image.widths.map((w) => `${url(w)} ${pixelWidth(w)}w`).join(', ');
+const img = { src: url(fallback), srcset, sizes, width: image.width, height: image.height, alt: image.alt };
+---
+
+{link ? (
+  <a class="photo-link" href={url(largest)}>
+    <img {...img} loading="lazy" decoding="async" />
+  </a>
+) : (
+  <img {...img} loading="lazy" decoding="async" />
+)}

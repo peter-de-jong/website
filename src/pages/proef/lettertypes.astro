@@ -1,0 +1,42 @@
+---
+// Temporary comparison page for the body font shortlist (PLAN.md 2.11).
+// Remove this page and the unused @fontsource packages once a font is chosen.
+import '@fontsource/cormorant-garamond/latin-400.css';
+import '@fontsource/cormorant-garamond/latin-400-italic.css';
+import '@fontsource/fraunces/latin-400.css';
+import '@fontsource/fraunces/latin-400-italic.css';
+import '@fontsource/libre-caslon-text/latin-400.css';
+import '@fontsource/libre-caslon-text/latin-400-italic.css';
+import Base from '../../layouts/Base.astro';
+
+const fonts = [
+  { name: 'EB Garamond', family: "'EB Garamond'" },
+  { name: 'Cormorant Garamond', family: "'Cormorant Garamond'" },
+  { name: 'Fraunces', family: "'Fraunces'" },
+  { name: 'Libre Caslon Text', family: "'Libre Caslon Text'" },
+];
+const sample =
+  'In de zomer van 1987 schilderde hij elke ochtend aan de rivier. Het licht veranderde voortdurend, en dus het schilderij ook. Pas na drie maanden vond hij het af. Een tweede regel met ë, é, ï en ö: geëerd, café, naïef, coördinatie.';
+---
+
+<Base title="Lettertypes · proef" noindex>
+  <main class="book">
+    {fonts.map((f) => (
+      <section class="spread">
+        <div class="page page--left">
+          <div class="page__content">
+            <p class="hand" style="font-size: 2.25rem; margin: 0">Rood veld</p>
+            <p style="color: var(--ink-soft); margin: 0.25rem 0 0">{f.name}</p>
+          </div>
+        </div>
+        <div class="page page--right">
+          <div class="page__content ink" style={`font-family: ${f.family}, serif`}>
+            <p style="margin-top: 0">{sample}</p>
+            <p><em>Olieverf op doek, 120 × 80 cm. Cursief voor bijschriften.</em></p>
+            <p style="margin-bottom: 0">0123456789: 1987 · 2004 · 2024</p>
+          </div>
+        </div>
+      </section>
+    ))}
+  </main>
+</Base>

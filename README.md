@@ -5,3 +5,12 @@ Built with Astro and deployed on deploybase.eu.
 
 The code is MIT-licensed. Texts, photographs, artwork, illustrations, the logo and
 the handwriting font are © Peter de Jong, all rights reserved. See [LICENSE](LICENSE).
+
+## Development
+
+Requires Node 24 (see `.nvmrc`).
+
+```bash
+npm install
+npm run dev
+```

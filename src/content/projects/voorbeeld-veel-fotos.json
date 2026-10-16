@@ -1,0 +1,85 @@
+{
+  "title": "Veel foto's (voorbeeld)",
+  "year": 2019,
+  "sortDate": "2019-03-01",
+  "medium": "Serie van zes werken",
+  "left": [
+    {
+      "type": "photos",
+      "images": [
+        {
+          "src": "/media/voorbeeld-veel-fotos/680bf757",
+          "width": 2400,
+          "height": 2400,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldwerk 1 uit de serie"
+        },
+        {
+          "src": "/media/voorbeeld-veel-fotos/725ae36b",
+          "width": 2400,
+          "height": 1800,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldwerk 2 uit de serie"
+        },
+        {
+          "src": "/media/voorbeeld-veel-fotos/658f3e05",
+          "width": 1800,
+          "height": 2400,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldwerk 3 uit de serie"
+        },
+        {
+          "src": "/media/voorbeeld-veel-fotos/2b546957",
+          "width": 2400,
+          "height": 1600,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldwerk 4 uit de serie"
+        },
+        {
+          "src": "/media/voorbeeld-veel-fotos/9eb5f8ba",
+          "width": 2400,
+          "height": 2400,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldwerk 5 uit de serie"
+        },
+        {
+          "src": "/media/voorbeeld-veel-fotos/98ed6cbd",
+          "width": 1714,
+          "height": 2400,
+          "widths": [
+            800,
+            1600,
+            2400
+          ],
+          "alt": "Voorbeeldwerk 6 uit de serie"
+        }
+      ]
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Een korte tekst naast een hele serie foto's. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

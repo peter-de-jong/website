@@ -1,0 +1,24 @@
+{
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/wie/658f3e05",
+        "width": 1800,
+        "height": 2400,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeld: hier komt een portret van Peter"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "**Wie?** Hier komt een tekst over Peter Dejong: wie hij is, wat hij maakt en waarom. Dit is voorbeeldtekst."
+    }
+  ]
+}

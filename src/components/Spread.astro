@@ -1,0 +1,19 @@
+---
+// One book spread: a left and a right page. In the base layer (mobile, no JS) spreads
+// stack vertically; the book engine later turns them into an open book.
+interface Props {
+  id: string;
+  label: string;
+}
+const { id, label } = Astro.props;
+---
+
+<section class="spread" id={id} aria-label={label}>
+  <slot name="title" />
+  <div class="page page--left">
+    <div class="page__content"><slot name="left" /></div>
+  </div>
+  <div class="page page--right">
+    <div class="page__content"><slot name="right" /></div>
+  </div>
+</section>

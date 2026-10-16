@@ -1,0 +1,16 @@
+{
+  "title": "Alleen tekst (voorbeeld)",
+  "year": 2008,
+  "left": [
+    {
+      "type": "text",
+      "text": "Een project zonder foto's, alleen tekst op beide bladzijden. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

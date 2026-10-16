@@ -1,0 +1,41 @@
+{
+  "title": "Tekening (voorbeeld)",
+  "year": 2015,
+  "medium": "Inkt op papier",
+  "dimensions": "30 × 20 cm",
+  "left": [
+    {
+      "type": "drawing",
+      "image": {
+        "src": "/media/voorbeeld-tekening/0007ab95",
+        "width": 1800,
+        "height": 1200,
+        "widths": [
+          800,
+          1600,
+          1800
+        ],
+        "alt": "Voorbeeldtekening met losse lijnen"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    },
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-tekening/75b9474d",
+        "width": 600,
+        "height": 450,
+        "widths": [
+          600
+        ],
+        "alt": "Een kleine voorbeeldfoto"
+      },
+      "caption": "Een bewust kleine foto, om te testen hoe dat eruitziet"
+    }
+  ]
+}

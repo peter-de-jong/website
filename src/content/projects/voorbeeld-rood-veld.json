@@ -1,0 +1,28 @@
+{
+  "title": "Rood veld (voorbeeld)",
+  "year": 2024,
+  "medium": "Olieverf op doek",
+  "dimensions": "120 × 80 cm",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-rood-veld/c9015f2c",
+        "width": 2400,
+        "height": 1600,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldschilderij met rode en gele vlakken"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

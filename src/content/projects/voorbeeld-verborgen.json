@@ -1,0 +1,27 @@
+{
+  "title": "Verborgen project (voorbeeld)",
+  "year": 2012,
+  "visible": false,
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-verborgen/725ae36b",
+        "width": 2400,
+        "height": 1800,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit project staat op 'niet zichtbaar' en hoort niet in het boek te staan."
+    }
+  ]
+}
