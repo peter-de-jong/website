@@ -1,0 +1,23 @@
+---
+// The ribbon bookmark menu. In the base layer it's a plain <details> that works without
+// JS; book mode (Phase 5) restyles it as a ribbon sticking out at the top of the book.
+import type { Book } from '../lib/book';
+
+interface Props {
+  categories: Book['categories'];
+}
+const { categories } = Astro.props;
+---
+
+<details class="ribbon-menu">
+  <summary class="hand">Menu</summary>
+  <nav aria-label="Hoofdstukken">
+    <ul>
+      <li><a href="#begin">Begin</a></li>
+      {categories.map(({ category }) => (
+        <li><a href={`#${category.id}`}>{category.data.title}</a></li>
+      ))}
+      <li><a href="#wie">Wie?</a></li>
+    </ul>
+  </nav>
+</details>

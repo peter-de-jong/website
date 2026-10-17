@@ -1,61 +1,112 @@
 ---
-import { getEntry } from 'astro:content';
 import Blocks from '../components/Blocks.astro';
+import CategoryNote from '../components/CategoryNote.astro';
+import Photo from '../components/Photo.astro';
+import RibbonMenu from '../components/RibbonMenu.astro';
 import Spread from '../components/Spread.astro';
 import Base from '../layouts/Base.astro';
-import { getProjects, groupByYear } from '../lib/projects';
+import { getBook, type Project } from '../lib/book';
+import { renderMarkdown } from '../lib/markdown';
 
-const projects = await getProjects();
-const years = groupByYear(projects);
-const about = await getEntry('about', 'wie');
-if (!about) throw new Error('src/content/about/wie.json is missing');
-
-const meta = (p: (typeof projects)[number]) =>
+const book = await getBook();
+const meta = (p: Project) =>
   [p.data.year, p.data.medium, p.data.dimensions].filter(Boolean).join(' · ');
 ---
 
 <Base>
   <header class="table-strip">
-    <!-- Placeholder until the scanned SVG of Peter's handwritten name -->
-    <a class="logo hand" href="#inhoud">Peter Dejong</a>
+    <!-- Placeholder until the scanned SVG of Peter's name, written with a fountain pen -->
+    <a class="logo hand" href="#begin">Peter Dejong</a>
+    <RibbonMenu categories={book.categories} />
     <a class="who hand" href="#wie">wie?</a>
   </header>
 
   <main class="book">
-    <Spread id="wie" label="Wie is Peter Dejong?">
-      <Fragment slot="left"><Blocks blocks={about.data.left} seed="wie-left" /></Fragment>
-      <Fragment slot="right"><Blocks blocks={about.data.right} seed="wie-right" /></Fragment>
-    </Spread>
+    {book.spreads.map((spread) => {
+      switch (spread.kind) {
+        case 'intro':
+          return (
+            <Spread id="begin" label="Begin">
+              <Fragment slot="left"><Blocks blocks={spread.page.data.left} seed="intro-left" /></Fragment>
+              <Fragment slot="right">
+                <Blocks blocks={spread.page.data.right} seed="intro-right" />
+                <nav class="contents ink" aria-label="Inhoud">
+                  <h1 class="hand">Inhoud</h1>
+                  <ul class="contents__categories">
+                    {book.categories.map(({ category }) => (
+                      <li><a class="hand" href={`#${category.id}`}>{category.data.title}</a></li>
+                    ))}
+                  </ul>
+                  {book.loose.length > 0 && (
+                    <>
+                      <h2 class="contents__heading">Ook te zien</h2>
+                      <ul>
+                        {book.loose.map((p) => (
+                          <li><a href={`#${p.id}`}>{p.data.title}</a> <span class="contents__year">{p.data.year}</span></li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                  <p class="contents__bio"><a href="#wie">Lees meer over Peter →</a></p>
+                </nav>
+              </Fragment>
+            </Spread>
+          );
 
-    <Spread id="inhoud" label="Inhoud">
-      <Fragment slot="left">
-        <h1 class="hand index-title">Inhoud</h1>
-      </Fragment>
-      <Fragment slot="right">
-        <nav aria-label="Alle projecten" class="index ink">
-          {years.map(([year, list]) => (
-            <section class="index__year">
-              <h2 class="hand">{year}</h2>
-              <ul>
-                {list.map((p) => (
-                  <li><a href={`#${p.id}`}>{p.data.title}</a></li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </nav>
-      </Fragment>
-    </Spread>
+        case 'opener': {
+          const { category, projects } = spread;
+          return (
+            <Spread id={category.id} label={category.data.title} category={category.id} accent={category.data.accent}>
+              <Fragment slot="left">
+                {category.data.opener ? (
+                  <figure class="block block--opener">
+                    <Photo image={category.data.opener} link={false} />
+                  </figure>
+                ) : (
+                  <h2 class="hand opener-title">{category.data.title}</h2>
+                )}
+              </Fragment>
+              <Fragment slot="right">
+                {category.data.intro && (
+                  <div class="block block--text ink" set:html={renderMarkdown(category.data.intro)} />
+                )}
+                <nav class="contents ink" aria-label={`Projecten in ${category.data.title}`}>
+                  <ul>
+                    {projects.map((p) => (
+                      <li><a href={`#${p.id}`}>{p.data.title}</a> <span class="contents__year">{p.data.year}</span></li>
+                    ))}
+                  </ul>
+                </nav>
+              </Fragment>
+            </Spread>
+          );
+        }
 
-    {projects.map((p) => (
-      <Spread id={p.id} label={p.data.title}>
-        <div slot="title" class="title-strip">
-          <h2 class="hand">{p.data.title}</h2>
-          <p class="title-strip__meta">{meta(p)}</p>
-        </div>
-        <Fragment slot="left"><Blocks blocks={p.data.left} seed={`${p.id}-left`} /></Fragment>
-        <Fragment slot="right"><Blocks blocks={p.data.right} seed={`${p.id}-right`} /></Fragment>
-      </Spread>
-    ))}
+        case 'project': {
+          const { project: p, category, last } = spread;
+          return (
+            <Spread id={p.id} label={p.data.title} category={category?.id} accent={category?.data.accent}>
+              <div slot="title" class="title-strip">
+                <h2 class="hand">{p.data.title}</h2>
+                <p class="title-strip__meta">{meta(p)}</p>
+              </div>
+              <Fragment slot="left"><Blocks blocks={p.data.left} seed={`${p.id}-left`} /></Fragment>
+              <Fragment slot="right">
+                <Blocks blocks={p.data.right} seed={`${p.id}-right`} />
+                {last && category && <CategoryNote current={category} categories={book.categories} />}
+              </Fragment>
+            </Spread>
+          );
+        }
+
+        case 'bio':
+          return (
+            <Spread id="wie" label="Wie is Peter Dejong?">
+              <Fragment slot="left"><Blocks blocks={spread.page.data.left} seed="bio-left" /></Fragment>
+              <Fragment slot="right"><Blocks blocks={spread.page.data.right} seed="bio-right" /></Fragment>
+            </Spread>
+          );
+      }
+    })}
   </main>
 </Base>

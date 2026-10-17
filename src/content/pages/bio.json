@@ -1,0 +1,25 @@
+{
+  "left": [
+    {
+      "type": "text",
+      "text": "## Wie is Peter Dejong?\n\nDit is de plek voor de volledige biografie (voorbeeldtekst). Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is de plek voor de volledige biografie (voorbeeldtekst). Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is de plek voor de volledige biografie (voorbeeldtekst). Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is de plek voor de volledige biografie (voorbeeldtekst). Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ],
+  "right": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/wie/658f3e05",
+        "width": 1800,
+        "height": 2400,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeld: hier komt een portret van Peter"
+      },
+      "caption": "Peter (voorbeeldportret)"
+    }
+  ]
+}

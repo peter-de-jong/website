@@ -1,0 +1,28 @@
+{
+  "title": "Straatvoorstelling (voorbeeld)",
+  "category": "voorbeeld-performances",
+  "year": 2016,
+  "medium": "Performance, 20 minuten",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-verborgen/725ae36b",
+        "width": 2400,
+        "height": 1800,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij straatvoorstelling"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Kunstenaarsboek (voorbeeld)",
+  "category": "voorbeeld-boeken",
+  "year": 2013,
+  "medium": "Oplage van 50",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-performance-markt/02c284a3",
+        "width": 2400,
+        "height": 1600,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij kunstenaarsboek"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

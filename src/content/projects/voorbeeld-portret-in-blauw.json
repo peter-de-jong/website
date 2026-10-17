@@ -1,0 +1,28 @@
+{
+  "title": "Portret in blauw (voorbeeld)",
+  "category": "voorbeeld-schilderijen",
+  "year": 2010,
+  "medium": "Acryl op paneel",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-lange-tekst/195deb26",
+        "width": 2400,
+        "height": 1800,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij portret in blauw"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

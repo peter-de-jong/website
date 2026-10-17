@@ -1,0 +1,28 @@
+{
+  "title": "Samen op reis (voorbeeld)",
+  "category": "voorbeeld-samenwerkingen",
+  "year": 2023,
+  "medium": "Met andere kunstenaars",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-veel-fotos/725ae36b",
+        "width": 2400,
+        "height": 1800,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij samen op reis"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

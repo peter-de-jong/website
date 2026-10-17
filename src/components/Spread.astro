@@ -4,11 +4,20 @@
 interface Props {
   id: string;
   label: string;
+  // Category id, so book mode can switch the category's elements on the table
+  category?: string;
+  accent?: string;
 }
-const { id, label } = Astro.props;
+const { id, label, category, accent } = Astro.props;
 ---
 
-<section class="spread" id={id} aria-label={label}>
+<section
+  class="spread"
+  id={id}
+  aria-label={label}
+  data-category={category}
+  style={accent ? `--accent: ${accent}` : undefined}
+>
   <slot name="title" />
   <div class="page page--left">
     <div class="page__content"><slot name="left" /></div>

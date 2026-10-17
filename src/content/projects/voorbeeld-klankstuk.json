@@ -1,0 +1,28 @@
+{
+  "title": "Klankstuk (voorbeeld)",
+  "category": "voorbeeld-muziek",
+  "year": 2022,
+  "medium": "Geluid, 12 minuten",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-veel-fotos/680bf757",
+        "width": 2400,
+        "height": 2400,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij klankstuk"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

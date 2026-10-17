@@ -1,0 +1,28 @@
+{
+  "title": "Decorontwerp (voorbeeld)",
+  "category": "voorbeeld-theater",
+  "year": 2011,
+  "medium": "Decor en kostuums",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-performance-markt/98ed6cbd",
+        "width": 1714,
+        "height": 2400,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij decorontwerp"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

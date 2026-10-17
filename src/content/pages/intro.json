@@ -1,6 +1,10 @@
 {
   "left": [
     {
+      "type": "text",
+      "text": "**Peter Dejong** (voorbeeld). Hier komt een kort stukje over Peter: wie hij is en wat hij maakt, in een paar zinnen."
+    },
+    {
       "type": "photo",
       "image": {
         "src": "/media/wie/658f3e05",
@@ -15,10 +19,5 @@
       }
     }
   ],
-  "right": [
-    {
-      "type": "text",
-      "text": "**Wie?** Hier komt een tekst over Peter Dejong: wie hij is, wat hij maakt en waarom. Dit is voorbeeldtekst."
-    }
-  ]
+  "right": []
 }

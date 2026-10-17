@@ -136,6 +136,8 @@ a {
 .title-strip h2 {
   margin: 0;
   font-size: 2.25rem;
+  text-decoration: underline 3px var(--accent, transparent);
+  text-underline-offset: 0.3em;
 }
 
 .title-strip__meta {
@@ -198,33 +200,132 @@ a {
   mix-blend-mode: multiply;
 }
 
-/* ---------- Index ---------- */
+/* ---------- Ribbon menu (base layer: a plain disclosure) ---------- */
 
-.index-title {
-  font-size: 3rem;
-  margin: 0;
+.table-strip {
+  position: relative;
 }
 
-.index__year h2 {
-  font-size: 1.75rem;
-  margin: 1.5rem 0 0.25rem;
+.ribbon-menu {
+  margin-left: auto;
+  margin-right: 1.5rem;
 }
 
-.index__year:first-child h2 {
-  margin-top: 0;
+.ribbon-menu summary {
+  cursor: pointer;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  list-style: none;
 }
 
-.index ul {
+.ribbon-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.ribbon-menu nav {
+  position: absolute;
+  right: var(--gutter);
+  z-index: 10;
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.35);
+}
+
+.ribbon-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.index a {
+.ribbon-menu a {
+  display: block;
+  padding: 0.2rem 0;
+}
+
+/* ---------- Contents (intro + category openers) ---------- */
+
+.contents h1 {
+  font-size: 3rem;
+  margin: 0 0 0.5rem;
+}
+
+.contents ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contents a {
   text-decoration: none;
 }
 
-.index a:hover {
+.contents a:hover {
+  text-decoration: underline;
+}
+
+.contents__categories a {
+  font-size: 1.6rem;
+}
+
+.contents__heading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.25rem;
+}
+
+.contents__year {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.contents__bio {
+  margin-top: 1.5rem;
+}
+
+.block + .contents,
+.block--text + .contents {
+  margin-top: 1.5rem;
+}
+
+/* ---------- Category opener ---------- */
+
+.opener-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0;
+  color: var(--accent, var(--ink));
+}
+
+.block--opener {
+  margin: 0;
+}
+
+/* ---------- End-of-category note ---------- */
+
+.category-note {
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem;
+  background: #fffaf0;
+  border-left: 4px solid var(--accent, var(--ink-soft));
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.15), 0 4px 10px rgb(0 0 0 / 0.08);
+  transform: rotate(-0.6deg);
+}
+
+.category-note__next {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.category-note__others {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.category-note a {
+  text-decoration: none;
+}
+
+.category-note a:hover {
   text-decoration: underline;
 }
 

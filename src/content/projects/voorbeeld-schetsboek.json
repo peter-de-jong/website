@@ -1,0 +1,28 @@
+{
+  "title": "Schetsboek (voorbeeld)",
+  "category": "voorbeeld-tekeningen",
+  "year": 2020,
+  "medium": "Potlood op papier",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-performance-markt/34ef6189",
+        "width": 1920,
+        "height": 2400,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij schetsboek"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}

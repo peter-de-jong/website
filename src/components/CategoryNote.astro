@@ -1,0 +1,35 @@
+---
+// End-of-category note on the last spread of a category: go on to the next category,
+// or pick another one.
+import type { Book, Category } from '../lib/book';
+
+interface Props {
+  current: Category;
+  categories: Book['categories'];
+}
+const { current, categories } = Astro.props;
+const i = categories.findIndex((c) => c.category.id === current.id);
+const next = categories[i + 1]?.category;
+const others = categories.filter((c) => c.category.id !== current.id && c.category.id !== next?.id);
+---
+
+<aside class="category-note ink" aria-label="Verder bladeren">
+  <p class="hand category-note__next">
+    {next ? (
+      <a href={`#${next.id}`}>Verder met {next.data.title} →</a>
+    ) : (
+      <a href="#wie">Verder: wie is Peter? →</a>
+    )}
+  </p>
+  {others.length > 0 && (
+    <p class="category-note__others">
+      Of kies een ander hoofdstuk:{' '}
+      {others.map(({ category }, j) => (
+        <>
+          <a href={`#${category.id}`}>{category.data.title}</a>
+          {j < others.length - 1 ? ', ' : ''}
+        </>
+      ))}
+    </p>
+  )}
+</aside>

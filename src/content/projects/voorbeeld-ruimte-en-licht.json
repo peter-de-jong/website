@@ -1,0 +1,28 @@
+{
+  "title": "Ruimte en licht (voorbeeld)",
+  "category": "voorbeeld-installaties",
+  "year": 2018,
+  "medium": "Installatie",
+  "left": [
+    {
+      "type": "photo",
+      "image": {
+        "src": "/media/voorbeeld-performance-markt/9eb5f8ba",
+        "width": 2400,
+        "height": 2400,
+        "widths": [
+          800,
+          1600,
+          2400
+        ],
+        "alt": "Voorbeeldfoto bij ruimte en licht"
+      }
+    }
+  ],
+  "right": [
+    {
+      "type": "text",
+      "text": "Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. Dit is voorbeeldtekst. Hier komt later Peters eigen beschrijving van het werk: hoe het ontstond, waar het te zien was en wat hem bezighield. "
+    }
+  ]
+}
