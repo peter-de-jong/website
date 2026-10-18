@@ -6,6 +6,8 @@
   Cache-Control: no-cache
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  # Keep search engines out until launch (remove in Phase 9)
+  X-Robots-Tag: noindex, nofollow
 
 # Fingerprinted by Astro (CSS, JS, fonts, design images): safe to cache forever.
 /_astro/*
