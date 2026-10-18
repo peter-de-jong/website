@@ -1,0 +1,117 @@
+---
+// Temporary PIN screen for the demo period, so a stray visitor doesn't land on the
+// placeholder site. NOT security: the code is in this public repo and the content is in
+// the HTML. Remove this component (and its line in Base.astro) at launch.
+const CODE = '1224';
+const KEY = 'pd-demo-ok';
+---
+
+<script is:inline define:vars={{ KEY }}>
+  // Runs before the body renders, so locked visitors never see the page flash.
+  try {
+    if (localStorage.getItem(KEY) !== '1') document.documentElement.classList.add('locked');
+  } catch {
+    document.documentElement.classList.add('locked');
+  }
+</script>
+
+<style is:global>
+  .demo-gate {
+    display: none;
+  }
+
+  html.locked body > :not(.demo-gate) {
+    display: none;
+  }
+
+  html.locked .demo-gate {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: var(--gutter);
+  }
+
+  .demo-gate form {
+    width: min(100%, 22rem);
+    padding: 2rem;
+    background: var(--paper);
+    color: var(--ink);
+    text-align: center;
+    box-shadow: 0 4px 20px rgb(0 0 0 / 0.4);
+  }
+
+  .demo-gate h1 {
+    margin: 0 0 0.25rem;
+    font-size: 2.25rem;
+  }
+
+  .demo-gate p {
+    margin: 0 0 1.25rem;
+  }
+
+  .demo-gate input {
+    width: 8ch;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--ink-soft);
+    background: #fffaf0;
+    color: var(--ink);
+    font: inherit;
+    font-size: 1.75rem;
+    letter-spacing: 0.4em;
+    text-align: center;
+  }
+
+  .demo-gate__error {
+    min-height: 1.5em;
+    margin: 0.75rem 0 0;
+    color: #a33a2a;
+    font-size: 0.95rem;
+  }
+</style>
+
+<div class="demo-gate">
+  <form id="demo-gate-form" autocomplete="off">
+    <h1 class="hand">Peter Dejong</h1>
+    <p>Deze site is nog in aanbouw. Voer de code in.</p>
+    <label for="demo-gate-code" class="visually-hidden">Code</label>
+    <input
+      id="demo-gate-code"
+      type="password"
+      inputmode="numeric"
+      pattern="[0-9]*"
+      maxlength="4"
+      aria-describedby="demo-gate-error"
+      autofocus
+    />
+    <p id="demo-gate-error" class="demo-gate__error" aria-live="polite"></p>
+  </form>
+</div>
+
+<script is:inline define:vars={{ CODE, KEY }}>
+  const form = document.getElementById('demo-gate-form');
+  const input = document.getElementById('demo-gate-code');
+  const error = document.getElementById('demo-gate-error');
+
+  function check() {
+    if (input.value === CODE) {
+      try {
+        localStorage.setItem(KEY, '1');
+      } catch {}
+      document.documentElement.classList.remove('locked');
+    } else if (input.value.length === 4) {
+      error.textContent = 'Dat is niet de goede code.';
+      input.value = '';
+    }
+  }
+
+  // Submit by itself once four digits are typed; Enter works too.
+  input.addEventListener('input', () => {
+    error.textContent = '';
+    if (input.value.length === 4) check();
+  });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    check();
+  });
+  if (document.documentElement.classList.contains('locked')) input.focus();
+</script>

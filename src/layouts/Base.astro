@@ -5,6 +5,7 @@ import '@fontsource/eb-garamond/latin-600.css';
 // Stand-in for Peter's handwriting font until his Calligraphr font is ready.
 import '@fontsource/caveat/latin-500.css';
 import '../styles/global.css';
+import DemoGate from '../components/DemoGate.astro';
 
 interface Props {
   title?: string;
@@ -29,6 +30,8 @@ const {
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
+    <!-- Temporary PIN screen for the demo period; remove at launch -->
+    <DemoGate />
     <slot />
   </body>
 </html>
