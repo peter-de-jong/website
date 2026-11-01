@@ -2,6 +2,18 @@
    The real book look (photo textures, stage scaling, scrolling pages) comes in Phase 5;
    colours and fonts here are placeholders until the Phase 1 design is chosen. */
 
+/* Peter's handwriting (Calligraphr), built by tools/build-hand-font.py in the project repo.
+   One weight, all capitals. Characters it lacks (. - ' & …) fall back to the body font. */
+@font-face {
+  font-family: 'Peter Dejong Hand';
+  src: url('../assets/fonts/peter-dejong-hand.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  /* The capitals are small for their em box; scale up to match the body text */
+  size-adjust: 135%;
+}
+
 :root {
   --table: #4a3f35;
   --table-ink: #efe6d6;
@@ -10,7 +22,7 @@
   --ink: #3b3129;
   --ink-soft: #6b5d50;
   --font-body: 'EB Garamond', Georgia, serif;
-  --font-hand: 'Caveat', 'Segoe Print', cursive;
+  --font-hand: 'Peter Dejong Hand', 'EB Garamond', Georgia, serif;
   --gutter: 1rem;
 }
 
@@ -66,7 +78,8 @@ a {
 
 .hand {
   font-family: var(--font-hand);
-  font-weight: 500;
+  font-weight: 400;
+  font-synthesis: none;
   line-height: 1.1;
 }
 
